@@ -1,0 +1,470 @@
+﻿:root {
+    --gray-color: rgb(142,158,170);
+    --blue-color: rgb(65,137,191); /*uradno je rgb koda rgb(65,137,196)*/
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.form {
+    width: 95%;
+    margin: auto;
+}
+.img {
+    border: 4px solid white;
+}
+.page-header {
+    font-family: Arial;
+    background-color: var(--gray-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    color: VAR(--blue-color);
+    margin: 10px;
+}
+
+.div-datum-picer {
+    display: flex;
+}
+.labels{
+    font-family: Arial;
+}
+.div-text-box {
+    padding:10px;
+    width:27%;
+    text-align: left;
+}
+body {
+}
+
+#dIVscrolledGridView {
+    overflow-x: scroll;
+    border: solid 2px var(--gray-color);
+    width: 95%;
+    margin: auto;
+}
+#timeButtonTable {
+    width: 50%;
+    height: 40px;
+    margin: auto;
+}
+
+.mydatagrid {
+    width: 95%;
+    border: solid var(--gray-color);
+    min-width: 80%;
+    height: 100%;
+}
+
+.header {
+    background-color: var(--blue-color);
+    font-family: Arial;
+    color: White;
+    border: none 0px transparent;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.pinned {
+    position: fixed; /* i.e. not scrolled */
+    background-color: #fff;
+    font-family: Arial;
+    font-size: 10px;
+    color: #000;
+    text-align: center;
+    width: 70px;
+    border: none 0px transparent;
+    z-index: 100; /* keep the pinned on top of the scrollables */
+}
+
+.rows {
+    white-space: nowrap;
+    background-color: #fff;
+    font-family: Arial;
+    font-size: 10px;
+    color: #000;
+    text-align: center;
+    border: none 0px transparent;
+}
+
+    .rows:hover {
+        background-color: #ff8000;
+        font-family: Arial;
+        color: #fff;
+        text-align: left;
+    }
+
+.selectedrow {
+    background-color: #b6ff00;
+    font-family: Arial;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+}
+
+.mydatagrid a /** FOR THE PAGING ICONS  **/ {
+    background-color: Transparent;
+    padding: 5px 5px 5px 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .mydatagrid a:hover /** FOR THE PAGING ICONS  HOVER STYLES**/ {
+        background-color: #000;
+        color: #fff;
+    }
+
+.mydatagrid span /** FOR THE PAGING ICONS CURRENT PAGE INDICATOR **/ {
+    background-color: #c9c9c9;
+    color: #000;
+    padding: 5px 5px 5px 5px;
+}
+
+.pager {
+    background-color: var(--gray-color);
+    font-family: Arial;
+    color: White;
+    height: 30px;
+    text-align: left;
+}
+
+.mydatagrid td {
+    padding: 5px;
+}
+
+.mydatagrid th {
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+}
+
+.radio-tile-group-right {
+    position: absolute;
+    right:2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    .radio-tile-group-right .input-container {
+        position: relative;
+        height: 7rem;
+        width: 7rem;
+        margin: 0.5rem;
+    }
+
+        .radio-tile-group-right .input-container .radio-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .radio-tile-group-right .input-container .button-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+
+        .radio-tile-group-right .input-container .radio-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--blue-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group-right .input-container .radio-tile-button {
+            display: flex;
+            background-color: var(--gray-color);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gray-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group-right .input-container .icon svg {
+            fill: var(--blue-color);
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .radio-tile-group-right .input-container .radio-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .radio-tile-group-right .input-container .button-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .radio-tile-group-right .input-container .radio-button:checked + .radio-tile {
+            background-color: var(--blue-color);
+            border: 2px solid var(--blue-color);
+            color: white;
+            transform: scale(1.1, 1.1);
+        }
+
+            .radio-tile-group-right .input-container .radio-button:checked + .radio-tile .icon svg {
+                font-family: Arial;
+                fill: white;
+                background-color: white;
+            }
+
+            .radio-tile-group-right .input-container .radio-button:checked + .radio-tile .radio-tile-label {
+                font-family: Arial;
+                color: white;
+                background-color: white;
+            }
+
+.radio-tile-group {
+    position: absolute;
+    left: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+    .radio-tile-group .input-container {
+        position: relative;
+        height: 7rem;
+        width: 7rem;
+        margin: 0.5rem;
+    }
+
+        .radio-tile-group .input-container .radio-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .radio-tile-group .input-container .button-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+
+        .radio-tile-group .input-container .radio-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--blue-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group .input-container .radio-tile-button {
+            display: flex;
+            background-color: var(--gray-color);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gray-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group .input-container .icon svg {
+            fill: var(--blue-color);
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .radio-tile-group .input-container .radio-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue-color);
+        }
+
+        .radio-tile-group .input-container .button-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .radio-tile-group .input-container .radio-button:checked + .radio-tile {
+            background-color: var(--blue-color);
+            border: 2px solid var(--blue-color);
+            color: white;
+            transform: scale(1.1, 1.1);
+        }
+
+            .radio-tile-group .input-container .radio-button:checked + .radio-tile .icon svg {
+                font-family: Arial;
+                fill: white;
+                background-color: var(--blue-color);
+            }
+
+            .radio-tile-group .input-container .radio-button:checked + .radio-tile .radio-tile-label {
+                font-family: Arial;
+                color: white;
+                background-color: var(--blue-color);
+            }
+
+    .radio-tile-group .input-container-small {
+        position: relative;
+        height: 5rem;
+        width: 5rem;
+        margin: 0.5rem; 
+    }
+
+        .radio-tile-group .input-container-small .radio-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .radio-tile-group .input-container-small .button-button {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+        }
+
+
+        .radio-tile-group .input-container-small .radio-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--blue-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group .input-container-small .radio-tile-button {
+            display: flex;
+            background-color: var(--gray-color);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gray-color);
+            border-radius: 5px;
+            padding: 1rem;
+            transition: transform 300ms ease;
+        }
+
+        .radio-tile-group .input-container-small .icon svg {
+            fill: var(--blue-color);
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .radio-tile-group .input-container-small .radio-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue-color);
+        }
+
+        .radio-tile-group .input-container-small .button-tile-label {
+            font-family: Arial;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .radio-tile-group .input-container-small .radio-button:checked + .radio-tile {
+            background-color: var(--blue-color);
+            border: 2px solid var(--blue-color);
+            color: white;
+            transform: scale(1.1, 1.1);
+        }
+
+            .radio-tile-group .input-container-small .radio-button:checked + .radio-tile .icon svg {
+                font-family: Arial;
+                fill: white;
+                background-color: var(--blue-color);
+            }
+
+            .radio-tile-group .input-container-small .radio-button:checked + .radio-tile .radio-tile-label {
+                font-family: Arial;
+                color: white;
+                background-color: var(--blue-color);
+            }
